@@ -18,29 +18,24 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>Fabric</key>
-	<dict>
-		<key>APIKey</key>
-		<string>6c5398341528dbf91f9f3320e2f07e0a0d7667f2</string>
-		<key>Kits</key>
-		<array>
-			<dict>
-				<key>KitInfo</key>
-				<dict>
-					<key>consumerKey</key>
-					<string>vTjc0qkGH3SKAj9bDPSn1bkgB</string>
-					<key>consumerSecret</key>
-					<string>2vNZZOKa1jLiDKmqJb4q1EDDX5A1MkHFMvnrLCPkA2t1XzY6Px</string>
-				</dict>
-				<key>KitName</key>
-				<string>Twitter</string>
-			</dict>
-		</array>
-	</dict>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>twitterkit-vTjc0qkGH3SKAj9bDPSn1bkgB</string>
+                </array>
+            </dict>
+        </array>
+        <key>LSApplicationQueriesSchemes</key>
+        <array>
+            <string>twitter</string>
+            <string>twitterauth</string>
+        </array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
-	<string>LauchScreen</string>
+	<string>Main</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UISupportedInterfaceOrientations</key>

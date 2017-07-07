@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -42,6 +42,10 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="0.1236804053" green="0.67601817850000001" blue="0.95583611729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S71-eL-ltS"/>
+                                    <segue destination="FZD-AU-Vos" kind="show" id="uJt-Ba-DzR"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twitter_logo" translatesAutoresizingMaskIntoConstraints="NO" id="sN7-1C-82F">
                                 <rect key="frame" x="59" y="44" width="33" height="32"/>
@@ -55,6 +59,9 @@
                                     <color key="titleColor" red="0.12859588860000001" green="0.66864842179999995" blue="0.95583850150000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.1236804053" green="0.67601817850000001" blue="0.95583611729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t7x-7d-x8r"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.12368040531873703" green="0.67601817846298218" blue="0.95583611726760864" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -62,30 +69,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="266" y="-316"/>
+            <point key="canvasLocation" x="431" y="-355"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="b1m-G8-ZWE">
-            <objects>
-                <viewController id="Ioz-34-Esa" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dGR-ud-tyZ"/>
-                        <viewControllerLayoutGuide type="bottom" id="5Mt-E2-jJp"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0qs-8J-gIM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sym-b5-y2S" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="993" y="-331"/>
-        </scene>
-        <!--Table View Controller-->
+        <!--Home Controller-->
         <scene sceneID="gcO-h1-kRC">
             <objects>
-                <tableViewController id="FZD-AU-Vos" sceneMemberID="viewController">
+                <tableViewController id="FZD-AU-Vos" customClass="HomeController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pnO-F2-jNS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -102,11 +91,6 @@
                                             <rect key="frame" x="157" y="-3" width="41" height="39"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDH-tg-DqV">
-                                            <rect key="frame" x="8" y="6" width="60" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Cancel"/>
-                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -143,7 +127,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mQW-Ih-Cqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3326" y="269"/>
+            <point key="canvasLocation" x="1143" y="-356"/>
         </scene>
     </scenes>
     <resources>

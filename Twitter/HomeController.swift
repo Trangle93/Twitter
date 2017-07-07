@@ -7,10 +7,15 @@
 //
 
 import UIKit
+import TwitterKit
 
-class HomeController: UICollectionViewController {
+class HomeController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView?.backgroundColor = .blue
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 }
