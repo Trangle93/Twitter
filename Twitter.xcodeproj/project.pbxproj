@@ -14,7 +14,12 @@
 		C0111C9B1F0C9CDC003CA9A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0111C9A1F0C9CDC003CA9A7 /* Assets.xcassets */; };
 		C0111CA91F0C9CDC003CA9A7 /* TwitterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0111CA81F0C9CDC003CA9A7 /* TwitterTests.swift */; };
 		C0111CB41F0C9CDD003CA9A7 /* TwitterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0111CB31F0C9CDD003CA9A7 /* TwitterUITests.swift */; };
-		C0111CC21F0CBE5A003CA9A7 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0111CC11F0CBE5A003CA9A7 /* HomeController.swift */; };
+		C04ED9E51F14A663004CA84E /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C062CAA11F136A60005E0C7B /* HomeTableViewCell.swift */; };
+		C04ED9E61F14A664004CA84E /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C062CAA11F136A60005E0C7B /* HomeTableViewCell.swift */; };
+		C04ED9E91F14A7D3004CA84E /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04ED9E11F1489FF004CA84E /* HomeTableViewController.swift */; };
+		C04ED9EB1F14AA9E004CA84E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04ED9EA1F14AA9E004CA84E /* Model.swift */; };
+		C062CA991F1332E5005E0C7B /* ListTimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C062CA981F1332E5005E0C7B /* ListTimeLineViewController.swift */; };
+		C062CAA21F136A60005E0C7B /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C062CAA11F136A60005E0C7B /* HomeTableViewCell.swift */; };
 		C0CEE17F1F0E422900EABB87 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CEE17E1F0E422900EABB87 /* LoginViewController.swift */; };
 		C569CEAFFF85E2DE79F6BFC2 /* Pods_TwitterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F874021A0D3CD393D59F9D7A /* Pods_TwitterUITests.framework */; };
 /* End PBXBuildFile section */
@@ -55,7 +60,10 @@
 		C0111CAF1F0C9CDD003CA9A7 /* TwitterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwitterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0111CB31F0C9CDD003CA9A7 /* TwitterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterUITests.swift; sourceTree = "<group>"; };
 		C0111CB51F0C9CDD003CA9A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C0111CC11F0CBE5A003CA9A7 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		C04ED9E11F1489FF004CA84E /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		C04ED9EA1F14AA9E004CA84E /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		C062CA981F1332E5005E0C7B /* ListTimeLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTimeLineViewController.swift; sourceTree = "<group>"; };
+		C062CAA11F136A60005E0C7B /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		C0CEE1751F0E1C7200EABB87 /* Twitter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Twitter.xcodeproj; sourceTree = "<group>"; };
 		C0CEE17E1F0E422900EABB87 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F874021A0D3CD393D59F9D7A /* Pods_TwitterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,7 +149,10 @@
 			children = (
 				C0111C931F0C9CDC003CA9A7 /* AppDelegate.swift */,
 				C0CEE17E1F0E422900EABB87 /* LoginViewController.swift */,
-				C0111CC11F0CBE5A003CA9A7 /* HomeController.swift */,
+				C04ED9E11F1489FF004CA84E /* HomeTableViewController.swift */,
+				C062CAA11F136A60005E0C7B /* HomeTableViewCell.swift */,
+				C04ED9EA1F14AA9E004CA84E /* Model.swift */,
+				C062CA981F1332E5005E0C7B /* ListTimeLineViewController.swift */,
 				C0111C9A1F0C9CDC003CA9A7 /* Assets.xcassets */,
 				C0111C971F0C9CDC003CA9A7 /* Main.storyboard */,
 				C0111C9F1F0C9CDC003CA9A7 /* Info.plist */,
@@ -475,8 +486,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0111C941F0C9CDC003CA9A7 /* AppDelegate.swift in Sources */,
+				C062CAA21F136A60005E0C7B /* HomeTableViewCell.swift in Sources */,
+				C062CA991F1332E5005E0C7B /* ListTimeLineViewController.swift in Sources */,
+				C04ED9EB1F14AA9E004CA84E /* Model.swift in Sources */,
 				C0CEE17F1F0E422900EABB87 /* LoginViewController.swift in Sources */,
-				C0111CC21F0CBE5A003CA9A7 /* HomeController.swift in Sources */,
+				C04ED9E91F14A7D3004CA84E /* HomeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +498,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C04ED9E51F14A663004CA84E /* HomeTableViewCell.swift in Sources */,
 				C0111CA91F0C9CDC003CA9A7 /* TwitterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,6 +507,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C04ED9E61F14A664004CA84E /* HomeTableViewCell.swift in Sources */,
 				C0111CB41F0C9CDD003CA9A7 /* TwitterUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

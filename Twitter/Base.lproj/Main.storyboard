@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="j3x-Lo-FgQ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -44,7 +45,7 @@
                                 </state>
                                 <connections>
                                     <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S71-eL-ltS"/>
-                                    <segue destination="FZD-AU-Vos" kind="show" id="uJt-Ba-DzR"/>
+                                    <segue destination="j3x-Lo-FgQ" kind="show" id="usi-dZ-PcK"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twitter_logo" translatesAutoresizingMaskIntoConstraints="NO" id="sN7-1C-82F">
@@ -69,68 +70,153 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="431" y="-355"/>
+            <point key="canvasLocation" x="327" y="-379"/>
         </scene>
-        <!--Home Controller-->
-        <scene sceneID="gcO-h1-kRC">
+        <!--Home Table View Controller-->
+        <scene sceneID="q9v-ar-QGy">
             <objects>
-                <tableViewController id="FZD-AU-Vos" customClass="HomeController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pnO-F2-jNS">
+                <tableViewController id="b5Y-J2-n3K" customClass="HomeTableViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="250" sectionHeaderHeight="28" sectionFooterHeight="28" id="Gp6-co-TJP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="81" id="1HG-NA-ukZ">
-                                <rect key="frame" x="0.0" y="28" width="375" height="81"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeTableViewCell" rowHeight="250" id="b4E-l6-EpH" customClass="HomeTableViewCell" customModule="Twitter" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="250"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1HG-NA-ukZ" id="324-AX-knx">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b4E-l6-EpH" id="Q67-0R-Sj9">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twitter_logo_blue" translatesAutoresizingMaskIntoConstraints="NO" id="lK0-Fi-0sc">
-                                            <rect key="frame" x="157" y="-3" width="41" height="39"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-example" translatesAutoresizingMaskIntoConstraints="NO" id="CY1-gq-hGh">
+                                            <rect key="frame" x="8" y="8" width="52" height="47"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TechCrunch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uq-ct-EJS">
+                                            <rect key="frame" x="68" y="1" width="77" height="19"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-example" translatesAutoresizingMaskIntoConstraints="NO" id="t2U-eD-Zuk">
+                                            <rect key="frame" x="61" y="63" width="306" height="150"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twitter-retweet_Image" translatesAutoresizingMaskIntoConstraints="NO" id="3fO-9M-aZ3">
+                                            <rect key="frame" x="161" y="221" width="24" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twitter-reply-Image" translatesAutoresizingMaskIntoConstraints="NO" id="Mq8-YX-7Wx">
+                                            <rect key="frame" x="68" y="220" width="26" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twitter-meassage-Image" translatesAutoresizingMaskIntoConstraints="NO" id="q8C-5y-WI7">
+                                            <rect key="frame" x="348" y="216" width="19" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jg-ey-euw">
+                                            <rect key="frame" x="68" y="16" width="299" height="49"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <string key="text">Control-drag from the rating control on your canvas to the code display in the editor on the right, stopping the drag at the line just below the photoImageView property in MealTableViewCell.swift.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4r-z8-6F6">
+                                            <rect key="frame" x="143" y="2" width="141" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twitter-heart-Image" translatesAutoresizingMaskIntoConstraints="NO" id="dlr-FH-Mvv">
+                                            <rect key="frame" x="245" y="220" width="56" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="0gb-Wo-QEj">
-                                <rect key="frame" x="0.0" y="109" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0gb-Wo-QEj" id="qRY-cC-iTF">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="0K3-8e-ujc">
-                                <rect key="frame" x="0.0" y="153" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0K3-8e-ujc" id="Zaa-Sx-OLL">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lfn-sp-beE">
-                                <rect key="frame" x="0.0" y="197" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lfn-sp-beE" id="ML6-6D-KnQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="screenName" destination="l4r-z8-6F6" id="bZe-ey-iOC"/>
+                                    <outlet property="tweet" destination="3Jg-ey-euw" id="YeY-8d-lR6"/>
+                                    <outlet property="tweetImage" destination="t2U-eD-Zuk" id="yL7-2e-R4h"/>
+                                    <outlet property="twitterAvata" destination="CY1-gq-hGh" id="Dnu-wC-nhT"/>
+                                    <outlet property="userName" destination="9uq-ct-EJS" id="2Ub-w5-FAN"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="FZD-AU-Vos" id="Gb4-5f-ZOg"/>
-                            <outlet property="delegate" destination="FZD-AU-Vos" id="2Ce-mN-95g"/>
+                            <outlet property="dataSource" destination="b5Y-J2-n3K" id="k0r-WO-Hxc"/>
+                            <outlet property="delegate" destination="b5Y-J2-n3K" id="CfF-7A-jSf"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="Edu-6h-mID">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="uaK-F2-fZn">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LH0-fJ-OHC">
+                                <rect key="frame" x="16" y="7" width="26" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="twitter-addFriend-Image"/>
+                            </button>
+                        </barButtonItem>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="R4h-KV-os8">
+                            <rect key="frame" x="172.5" y="7" width="30" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="twitter_logo_blue"/>
+                        </button>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" style="plain" id="12w-pV-Tqh"/>
+                            <barButtonItem style="plain" id="1Vw-vg-5ds">
+                                <inset key="imageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="M5I-CM-7zE">
+                                    <rect key="frame" x="297" y="12" width="20" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="twitter-lookup-Image"/>
+                                </button>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mQW-Ih-Cqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UZ2-fS-CFt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1143" y="-356"/>
+            <point key="canvasLocation" x="2109.5999999999999" y="-357.57121439280365"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="Hn1-lU-hlG">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v62-Yz-Qj0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Pom-kj-6xq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 1" id="gH2-IR-JBr"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="3086" y="-1487"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HkT-5l-tpQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j3x-Lo-FgQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AgS-Df-fu6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="b5Y-J2-n3K" kind="relationship" relationship="rootViewController" id="AEw-sa-Trv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OK3-Jb-ih5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1170.4000000000001" y="-357.57121439280365"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Image-example" width="30" height="30"/>
+        <image name="twitter-addFriend-Image" width="30" height="30"/>
+        <image name="twitter-heart-Image" width="210" height="116"/>
+        <image name="twitter-lookup-Image" width="30" height="30"/>
+        <image name="twitter-meassage-Image" width="428" height="406"/>
+        <image name="twitter-reply-Image" width="32" height="36"/>
+        <image name="twitter-retweet_Image" width="37" height="36"/>
         <image name="twitter_logo" width="30" height="30"/>
         <image name="twitter_logo_blue" width="30" height="30"/>
     </resources>
