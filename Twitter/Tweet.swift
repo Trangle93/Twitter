@@ -11,12 +11,18 @@ import TwitterKit
 
 class Tweet {
     //variables
+    var userName: String = ""
+    var screenName: String = ""
     var photo: UIImage?
+    var avata: UIImage?
     var tweetText: String = ""
     
-    init?(photo: UIImage?, tweetText: String) {
+    init?(userName: String, screenName: String, photo: UIImage?, avata: UIImage?, tweetText: String) {
         self.photo = photo
         self.tweetText = tweetText
+        self.userName = userName
+        self.screenName = screenName
+        self.avata = avata
     }
 }
 
