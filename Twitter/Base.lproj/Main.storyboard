@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="j3x-Lo-FgQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
+        <deployment version="4144" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -45,7 +45,7 @@
                                 </state>
                                 <connections>
                                     <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S71-eL-ltS"/>
-                                    <segue destination="j3x-Lo-FgQ" kind="show" id="usi-dZ-PcK"/>
+                                    <segue destination="QgW-23-EKC" kind="show" id="JPI-uS-ikf"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twitter_logo" translatesAutoresizingMaskIntoConstraints="NO" id="sN7-1C-82F">
@@ -75,6 +75,7 @@
         <!--Home Table View Controller-->
         <scene sceneID="q9v-ar-QGy">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UZ2-fS-CFt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="b5Y-J2-n3K" customClass="HomeTableViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="250" sectionHeaderHeight="28" sectionFooterHeight="28" id="Gp6-co-TJP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -111,7 +112,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twitter-meassage-Image" translatesAutoresizingMaskIntoConstraints="NO" id="q8C-5y-WI7">
-                                            <rect key="frame" x="348" y="216" width="19" height="26"/>
+                                            <rect key="frame" x="333" y="216" width="19" height="26"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jg-ey-euw">
@@ -130,7 +131,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twitter-heart-Image" translatesAutoresizingMaskIntoConstraints="NO" id="dlr-FH-Mvv">
-                                            <rect key="frame" x="245" y="220" width="56" height="30"/>
+                                            <rect key="frame" x="244" y="221" width="16" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
@@ -176,43 +177,122 @@
                         </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UZ2-fS-CFt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2109.5999999999999" y="-357.57121439280365"/>
+            <point key="canvasLocation" x="2940" y="-372.86356821589209"/>
         </scene>
-        <!--Item 1-->
-        <scene sceneID="Hn1-lU-hlG">
+        <!--Tab Bar Controller-->
+        <scene sceneID="QfA-7w-Hk2">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="v62-Yz-Qj0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="Pom-kj-6xq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="gH2-IR-JBr"/>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="3086" y="-1487"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="HkT-5l-tpQ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j3x-Lo-FgQ" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="QgW-23-EKC" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AgS-Df-fu6">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Ihd-ri-DcL">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="AnD-Bp-mAX" kind="relationship" relationship="viewControllers" id="Psn-L9-UVn"/>
+                        <segue destination="m5X-OI-xR2" kind="relationship" relationship="viewControllers" id="sfC-Ai-oyA"/>
+                        <segue destination="YNt-nV-PtJ" kind="relationship" relationship="viewControllers" id="nS1-3e-rSo"/>
+                        <segue destination="Fw5-oA-quc" kind="relationship" relationship="viewControllers" id="z5j-Rg-n8K"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XWs-31-pMv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1106" y="-372"/>
+        </scene>
+        <!--Notifications-->
+        <scene sceneID="m9Z-m7-jFc">
+            <objects>
+                <viewController id="m5X-OI-xR2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mFq-wx-FUp"/>
+                        <viewControllerLayoutGuide type="bottom" id="oTB-Gv-Ock"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Acu-qI-Tcd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Notifications" image="notification" id="t1O-Fb-pzb">
+                        <inset key="imageInsets" minX="49" minY="56" maxX="49" maxY="53"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1AL-aN-rsw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="370" y="390"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="mv8-2T-COf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AnD-Bp-mAX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="yDa-8T-DyQ">
+                        <inset key="imageInsets" minX="121" minY="99" maxX="121" maxY="96"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="of0-9M-UWO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="b5Y-J2-n3K" kind="relationship" relationship="rootViewController" id="AEw-sa-Trv"/>
+                        <segue destination="b5Y-J2-n3K" kind="relationship" relationship="rootViewController" id="mJV-Nb-diP"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OK3-Jb-ih5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ss-Xg-Mjv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1170.4000000000001" y="-357.57121439280365"/>
+            <point key="canvasLocation" x="2007" y="-373"/>
+        </scene>
+        <!--Message-->
+        <scene sceneID="8xz-bL-d9d">
+            <objects>
+                <viewController id="YNt-nV-PtJ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rdR-7V-mf5"/>
+                        <viewControllerLayoutGuide type="bottom" id="p7E-Lb-YOt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="caU-Jr-Kgc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Message" image="twitter-meassage-Image" id="ufn-kl-NTs">
+                        <inset key="imageInsets" minX="101" minY="96" maxX="101" maxY="94"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KjZ-jX-dxu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1130" y="390"/>
+        </scene>
+        <!--Me-->
+        <scene sceneID="NwV-G2-O9S">
+            <objects>
+                <viewController id="Fw5-oA-quc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e28-CE-4V6"/>
+                        <viewControllerLayoutGuide type="bottom" id="hHu-Xh-gXm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3sE-m9-mdb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Me" image="follower" id="fqh-q0-bbQ">
+                        <inset key="imageInsets" minX="9" minY="13" maxX="9" maxY="7"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vF4-l5-MzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1910" y="390"/>
         </scene>
     </scenes>
     <resources>
         <image name="Image-example" width="30" height="30"/>
+        <image name="follower" width="64" height="64"/>
+        <image name="home" width="517" height="371"/>
+        <image name="notification" width="256" height="256"/>
         <image name="twitter-addFriend-Image" width="30" height="30"/>
-        <image name="twitter-heart-Image" width="210" height="116"/>
+        <image name="twitter-heart-Image" width="40" height="35"/>
         <image name="twitter-lookup-Image" width="30" height="30"/>
         <image name="twitter-meassage-Image" width="428" height="406"/>
         <image name="twitter-reply-Image" width="32" height="36"/>

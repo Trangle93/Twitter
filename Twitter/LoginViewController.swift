@@ -8,6 +8,7 @@
 
 import UIKit
 import TwitterKit
+import SwiftyJSON
 
 class LoginViewController: UIViewController {
     override func viewDidLoad() {
@@ -23,42 +24,41 @@ class LoginViewController: UIViewController {
     @IBAction func loginButton(_ sender: Any) {
         Twitter.sharedInstance().logIn(completion: { (session, error) in
             if (session != nil) {
-                if let userID = Twitter.sharedInstance().sessionStore.session()?.userID {
-                    let client = TWTRAPIClient(userID: userID)
-                }
                 print("signed in as \(session?.userName)");
                 
-                let client = TWTRAPIClient()
-                let statusesShowEndpoint = "https://api.twitter.com/1.1/statuses/show.json"
-                let params = ["id": "20"]
-                var clientError : NSError?
-                
-                let request = client.urlRequest(withMethod: "GET", url: statusesShowEndpoint, parameters: params, error: &clientError)
-                
-                client.sendTwitterRequest(request) { (response, data, connectionError) -> Void in
-                    if connectionError != nil {
-                        print("Error: \(connectionError)")
-                    }
+                //get user_timeline
+                if let userID = Twitter.sharedInstance().sessionStore.session()?.userID {
+                    let client = TWTRAPIClient(userID: userID)
+                    let statusesShowEndpoint = "https://api.twitter.com/1.1/statuses/user_timeline.json"
+                    let params = ["screen_name" : "nytimes", "count": "2"]
+//                    print(session?.userName)
+//                    let params = ["screen_name" : "Node.js", "count" : "5"]
+                    var clientError: NSError?
                     
-                    do {
-                        let json = try JSONSerialization.jsonObject(with: data!, options: [])
-                        print("json: \(json)")
-                    } catch let jsonError as NSError {
-                        print("json error: \(jsonError.localizedDescription)")
+                    let request = client.urlRequest(withMethod: "GET", url: statusesShowEndpoint, parameters: params, error: &clientError)
+                    
+                    client.sendTwitterRequest(request) { (response, data, connectionError) -> Void in
+                        if connectionError != nil {
+                            print("Error: \(connectionError)")
+                        }
+                        do {
+                            let data = try JSONSerialization.jsonObject(with: data!, options: [])
+                            print(data)
+                        } catch let jsonError as NSError {
+                            print("json error: \(jsonError.localizedDescription)")
+                        }
                     }
                 }
                 
-                //get timeline from twitter
-                
-                
-//                let listTimeLineViewController = ListTimeLineViewController()
-//                self.navigationController?.pushViewController(listTimeLineViewController, animated: true)
                 let homeTableViewController = HomeTableViewController()
                 self.navigationController?.pushViewController(homeTableViewController, animated: true)
             } else {
                 print("error: \(error?.localizedDescription)");
+            
+            
             }
         })
+
     }
     
 }

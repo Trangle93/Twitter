@@ -22,7 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Twitter.sharedInstance().start(withConsumerKey: "vTjc0qkGH3SKAj9bDPSn1bkgB", consumerSecret: "2vNZZOKa1jLiDKmqJb4q1EDDX5A1MkHFMvnrLCPkA2t1XzY6Px")
         // Override point for customization after application launch.
         application.statusBarStyle = .lightContent
-        
         //ignore the storyboard
 //        window = UIWindow(frame: UIScreen.main.bounds)
 //        window?.makeKeyAndVisible()
@@ -36,6 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return Twitter.sharedInstance().application(app, open: url, options: options)
+    }
 //    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
 //        return Twitter.sharedInstance().application(app, open: url, options: options)
 //    }

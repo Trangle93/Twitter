@@ -5,6 +5,7 @@ target 'Twitter' do
   pod 'Fabric'
   pod 'Answers'
   pod 'TwitterKit'
+ pod 'TRON', '~> 2.0.0'
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 

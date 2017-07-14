@@ -8,6 +8,7 @@
 
 import UIKit
 import TwitterKit
+import SwiftyJSON
 
 class HomeTableViewController: UITableViewController {
     
@@ -17,13 +18,14 @@ class HomeTableViewController: UITableViewController {
         let ava2 = UIImage(named: "Image-example")
         let ava3 = UIImage(named: "Image-example")
         
-        guard let tweet1 = Tweet(photo: ava1, tweetText: "tweet test") else {
+
+        guard let tweet1 = Tweet(userName: "trangle", screenName: "tragit93", photo: ava1, avata: ava1, tweetText: "test") else {
             fatalError("fail")
         }
-        guard let tweet2 = Tweet(photo: ava2, tweetText: "Chang chang ahihi") else {
+        guard let tweet2 = Tweet(userName: "trangle", screenName: "tragit93", photo: ava1, avata: ava1, tweetText: "test") else {
             fatalError("fail")
         }
-        guard let tweet3 = Tweet(photo: ava3, tweetText: "Chang chang test") else {
+        guard let tweet3 = Tweet(userName: "trangle", screenName: "tragit93", photo: ava1, avata: ava1, tweetText: "test") else {
             fatalError("fail")
         }
         
@@ -34,7 +36,13 @@ class HomeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+//        let parameter : [String : AnyObject] = ["screen_name" : (session?.userName)! , "count" : "20"]
+//        let request = Twitter.sharedInstance().APIClient.URLRequestWithMethod("GET", URL: "https://api.twitter.com/1.1/statuses/user_timeline.json", parameters: parameter, error: nil)
+//        var response : NSURLResponse?
+//        let data = try! NSURLConnection.sendSynchronousRequest(request, returningResponse: &response)
+//        let arrayRep = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
+//        print(arrayRep)
         //load data
         loadTweets()
         // Uncomment the following line to preserve selection between presentations
@@ -81,8 +89,11 @@ class HomeTableViewController: UITableViewController {
         
         //fetches the appropriate meal for the data soucre layout
         let tweet = tweets[indexPath.row]
-        cell.twitterAvata.image = tweet.photo
+        cell.twitterAvata.image = tweet.avata
         cell.tweet.text = tweet.tweetText
+        cell.userName.text = tweet.userName
+        cell.screenName.text = tweet.screenName
+        cell.tweetImage.image = tweet.photo
         
         return cell
     }
