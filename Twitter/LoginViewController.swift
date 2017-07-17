@@ -43,7 +43,9 @@ class LoginViewController: UIViewController {
                         }
                         do {
                             let data = try JSONSerialization.jsonObject(with: data!, options: [])
-                            print(data)
+                            let json = JSON(data)
+                            print(json[1]["source"])
+                            print(json)
                         } catch let jsonError as NSError {
                             print("json error: \(jsonError.localizedDescription)")
                         }
