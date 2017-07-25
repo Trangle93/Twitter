@@ -26,32 +26,6 @@ class LoginViewController: UIViewController {
             if (session != nil) {
                 print("signed in as \(session?.userName)");
                 
-                //get user_timeline
-                if let userID = Twitter.sharedInstance().sessionStore.session()?.userID {
-                    let client = TWTRAPIClient(userID: userID)
-                    let statusesShowEndpoint = "https://api.twitter.com/1.1/statuses/user_timeline.json"
-                    let params = ["screen_name" : "nytimes", "count": "2"]
-//                    print(session?.userName)
-//                    let params = ["screen_name" : "Node.js", "count" : "5"]
-                    var clientError: NSError?
-                    
-                    let request = client.urlRequest(withMethod: "GET", url: statusesShowEndpoint, parameters: params, error: &clientError)
-                    
-                    client.sendTwitterRequest(request) { (response, data, connectionError) -> Void in
-                        if connectionError != nil {
-                            print("Error: \(connectionError)")
-                        }
-                        do {
-                            let data = try JSONSerialization.jsonObject(with: data!, options: [])
-                            let json = JSON(data)
-                            print(json[1]["source"])
-                            print(json)
-                        } catch let jsonError as NSError {
-                            print("json error: \(jsonError.localizedDescription)")
-                        }
-                    }
-                }
-                
                 let homeTableViewController = HomeTableViewController()
                 self.navigationController?.pushViewController(homeTableViewController, animated: true)
             } else {
@@ -62,5 +36,6 @@ class LoginViewController: UIViewController {
         })
 
     }
+
     
 }

@@ -12,44 +12,43 @@ import SwiftyJSON
 
 class HomeTableViewController: UITableViewController {
     
+    var numberOfRows = 0
     var tweets = [Tweet]()
-    private func loadTweets() {
-        let ava1 = UIImage(named: "Image-example")
-        let ava2 = UIImage(named: "Image-example")
-        let ava3 = UIImage(named: "Image-example")
-        
-
-        guard let tweet1 = Tweet(userName: "trangle", screenName: "tragit93", photo: ava1, avata: ava1, tweetText: "test") else {
-            fatalError("fail")
-        }
-        guard let tweet2 = Tweet(userName: "trangle", screenName: "tragit93", photo: ava1, avata: ava1, tweetText: "test") else {
-            fatalError("fail")
-        }
-        guard let tweet3 = Tweet(userName: "trangle", screenName: "tragit93", photo: ava1, avata: ava1, tweetText: "test") else {
-            fatalError("fail")
-        }
-        
-        tweets += [tweet1, tweet2, tweet3]
-    }
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let parameter : [String : AnyObject] = ["screen_name" : (session?.userName)! , "count" : "20"]
-//        let request = Twitter.sharedInstance().APIClient.URLRequestWithMethod("GET", URL: "https://api.twitter.com/1.1/statuses/user_timeline.json", parameters: parameter, error: nil)
-//        var response : NSURLResponse?
-//        let data = try! NSURLConnection.sendSynchronousRequest(request, returningResponse: &response)
-//        let arrayRep = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
-//        print(arrayRep)
-        //load data
+        print("login sucessful")
         loadTweets()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    func loadTweets() {
+        Tweet.getTimeline() {(tweets: [Tweet]) in
+              print(self.tweets)
+ //           tweets = results
+            print(tweets)
+        }
+        
+        
+//        getTimeline()
+//        let ava1 = UIImage(named: "Image-example")
+//        let ava2 = UIImage(named: "Image-example")
+//        let ava3 = UIImage(named: "Image-example")
+//
+//        guard let tweet1 = Tweet(userName: "trangle", screenName: "tragit93", photo: "aaa", avata: ava1, tweetText: "test") else {
+//            fatalError("fail")
+//        }
+//        guard let tweet2 = Tweet(userName: "trangle", screenName: "tragit93", photo: "aaa", avata: ava1, tweetText: "test") else {
+//            fatalError("fail")
+//        }
+//        guard let tweet3 = Tweet(userName: "trangle", screenName: "tragit93", photo: "aaa", avata: ava1, tweetText: "test") else {
+//            fatalError("fail")
+//        }
+//        
+//        tweets += [tweet1, tweet2, tweet3]
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,7 +65,7 @@ class HomeTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+//        // #warning Incomplete implementation, return the number of rows
 //        return 0
         return tweets.count
     }
@@ -88,12 +87,12 @@ class HomeTableViewController: UITableViewController {
         }
         
         //fetches the appropriate meal for the data soucre layout
-        let tweet = tweets[indexPath.row]
-        cell.twitterAvata.image = tweet.avata
-        cell.tweet.text = tweet.tweetText
-        cell.userName.text = tweet.userName
-        cell.screenName.text = tweet.screenName
-        cell.tweetImage.image = tweet.photo
+//        let tweet = tweets[indexPath.row]
+//        cell.twitterAvata.image = tweet.avata
+//        cell.tweet.text = tweet.tweetText
+//          cell.userName.text = tweets.userName
+ //         cell.screenName.text = tweets.screenName
+//        cell.tweetImage.image = tweet.photo
         
         return cell
     }

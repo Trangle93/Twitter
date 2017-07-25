@@ -10,18 +10,18 @@
 		4465FB4EE9403F41EFF45E87 /* Pods_TwitterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC108688C891C1C5BA160F3C /* Pods_TwitterTests.framework */; };
 		44DA5A6B4322612A94A0DE4A /* Pods_Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107BE1A2E5A62ECD716AD6E5 /* Pods_Twitter.framework */; };
 		C0111C941F0C9CDC003CA9A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0111C931F0C9CDC003CA9A7 /* AppDelegate.swift */; };
-		C0111C991F0C9CDC003CA9A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0111C971F0C9CDC003CA9A7 /* Main.storyboard */; };
 		C0111C9B1F0C9CDC003CA9A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0111C9A1F0C9CDC003CA9A7 /* Assets.xcassets */; };
 		C0111CA91F0C9CDC003CA9A7 /* TwitterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0111CA81F0C9CDC003CA9A7 /* TwitterTests.swift */; };
 		C0111CB41F0C9CDD003CA9A7 /* TwitterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0111CB31F0C9CDD003CA9A7 /* TwitterUITests.swift */; };
 		C04ED9E51F14A663004CA84E /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C062CAA11F136A60005E0C7B /* HomeTableViewCell.swift */; };
 		C04ED9E61F14A664004CA84E /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C062CAA11F136A60005E0C7B /* HomeTableViewCell.swift */; };
-		C04ED9E91F14A7D3004CA84E /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04ED9E11F1489FF004CA84E /* HomeTableViewController.swift */; };
 		C04ED9EB1F14AA9E004CA84E /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04ED9EA1F14AA9E004CA84E /* Tweet.swift */; };
 		C062CA991F1332E5005E0C7B /* ListTimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C062CA981F1332E5005E0C7B /* ListTimeLineViewController.swift */; };
 		C062CAA21F136A60005E0C7B /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C062CAA11F136A60005E0C7B /* HomeTableViewCell.swift */; };
 		C063AFF31F172ED400931C66 /* HomeDatasourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C063AFF21F172ED400931C66 /* HomeDatasourceController.swift */; };
 		C0CEE17F1F0E422900EABB87 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CEE17E1F0E422900EABB87 /* LoginViewController.swift */; };
+		C0EFA34C1F21D77B004F2073 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04ED9E11F1489FF004CA84E /* HomeTableViewController.swift */; };
+		C0EFA34D1F21D7B0004F2073 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0111C971F0C9CDC003CA9A7 /* Main.storyboard */; };
 		C569CEAFFF85E2DE79F6BFC2 /* Pods_TwitterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F874021A0D3CD393D59F9D7A /* Pods_TwitterUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -335,7 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0111C9B1F0C9CDC003CA9A7 /* Assets.xcassets in Resources */,
-				C0111C991F0C9CDC003CA9A7 /* Main.storyboard in Resources */,
+				C0EFA34D1F21D7B0004F2073 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,9 +516,9 @@
 				C062CAA21F136A60005E0C7B /* HomeTableViewCell.swift in Sources */,
 				C063AFF31F172ED400931C66 /* HomeDatasourceController.swift in Sources */,
 				C062CA991F1332E5005E0C7B /* ListTimeLineViewController.swift in Sources */,
+				C0EFA34C1F21D77B004F2073 /* HomeTableViewController.swift in Sources */,
 				C04ED9EB1F14AA9E004CA84E /* Tweet.swift in Sources */,
 				C0CEE17F1F0E422900EABB87 /* LoginViewController.swift in Sources */,
-				C04ED9E91F14A7D3004CA84E /* HomeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
