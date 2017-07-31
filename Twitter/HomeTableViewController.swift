@@ -13,43 +13,81 @@ import SwiftyJSON
 class HomeTableViewController: UITableViewController {
     
     var numberOfRows = 0
-    var tweets = [Tweet]()
-    
+    var tweets :[Tweet] = []
+    private func loadTweets() {
+        getTimeline()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.loadImageFromUrl("https://abs.twimg.com/images/themes/theme1/bg.png", <#T##imageView: UIImageView##UIImageView#>)
         print("login sucessful")
+//        
+//        let url = URL(string: "http://pbs.twimg.com/profile_images/702185727262482432/n1JRsFeB_normal.png")
+//        let data = try? Data(contentsOf: url!)
+//        let image: UIImage = UIImage(data: data!)!
+//        getTimeline() {(results:[Tweet]) in
+//            for result in results {
+//                print("\(result)\n")
+//            }
+//        }
+//        getTimeline()
+//        let parameter : [String : AnyObject] = ["screen_name" : (session?.userName)! , "count" : "20"]
+//        let request = Twitter.sharedInstance().APIClient.URLRequestWithMethod("GET", URL: "https://api.twitter.com/1.1/statuses/user_timeline.json", parameters: parameter, error: nil)
+//        var response : NSURLResponse?
+//        let data = try! NSURLConnection.sendSynchronousRequest(request, returningResponse: &response)
+//        let arrayRep = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
+//        print(arrayRep)
+        //load data
         loadTweets()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-        
+
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-    func loadTweets() {
-        Tweet.getTimeline() {(tweets: [Tweet]) in
-              print(self.tweets)
- //           tweets = results
-            print(tweets)
+    
+    public func getTimeline() {
+        //get user_timeline
+        if let userID = Twitter.sharedInstance().sessionStore.session()?.userID {
+            let client = TWTRAPIClient(userID: userID)
+            let statusesShowEndpoint = "https://api.twitter.com/1.1/statuses/home_timeline.json"
+            let params = ["screen_name" : "tragit93"]
+            var clientError: NSError?
+                
+            let request = client.urlRequest(withMethod: "GET", url: statusesShowEndpoint, parameters: params, error: &clientError)
+                
+            client.sendTwitterRequest(request) { (response, data, connectionError) -> Void in
+                if connectionError != nil {
+                    print("Error: \(connectionError)")
+                }
+                if let data = data {
+                    do {
+                        if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]] {
+                            for data in json {
+//                                   print(data)
+//                                   if let retweetCountValue = try? Tweet(json: data) {
+//                                        self.tweets.append(retweetCountValue!)
+//                                    }
+                                if let userData = data["user"] as? [String: Any] {
+                                    if let item = try? Tweet(json: userData) {
+                                        self.tweets.append(item!)
+                                        self.tableView.reloadData()
+                                    }
+                                }
+                            }
+                            print(self.tweets)
+                        }
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                }
+            }
         }
-        
-        
-//        getTimeline()
-//        let ava1 = UIImage(named: "Image-example")
-//        let ava2 = UIImage(named: "Image-example")
-//        let ava3 = UIImage(named: "Image-example")
-//
-//        guard let tweet1 = Tweet(userName: "trangle", screenName: "tragit93", photo: "aaa", avata: ava1, tweetText: "test") else {
-//            fatalError("fail")
-//        }
-//        guard let tweet2 = Tweet(userName: "trangle", screenName: "tragit93", photo: "aaa", avata: ava1, tweetText: "test") else {
-//            fatalError("fail")
-//        }
-//        guard let tweet3 = Tweet(userName: "trangle", screenName: "tragit93", photo: "aaa", avata: ava1, tweetText: "test") else {
-//            fatalError("fail")
-//        }
-//        
-//        tweets += [tweet1, tweet2, tweet3]
     }
+    
+    
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -85,14 +123,24 @@ class HomeTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? HomeTableViewCell else {
             fatalError("cell is ot an instance")
         }
-        
+//        if userNameArray.count != 0 {
+//            cell.screenName.text = userNameArray[indexPath.row]
+//        }
+//        for tweet in tweets {
+//            cell.userName.text = tweet.userName
+//        }
+        let url = URL(string: "http://pbs.twimg.com/profile_images/702185727262482432/n1JRsFeB_normal.png")
+        let data = try? Data(contentsOf: url!)
+//        let image: UIImage = UIImage(data: data!)!
         //fetches the appropriate meal for the data soucre layout
-//        let tweet = tweets[indexPath.row]
+        let tweet = tweets[indexPath.row]
 //        cell.twitterAvata.image = tweet.avata
-//        cell.tweet.text = tweet.tweetText
-//          cell.userName.text = tweets.userName
- //         cell.screenName.text = tweets.screenName
-//        cell.tweetImage.image = tweet.photo
+        cell.tweet.text = tweet.tweetText
+        cell.userName.text = tweet.userName
+        cell.screenName.text = tweet.screenName
+//        cell.favoriteCount = tweet.favoriteCount
+        cell.tweetImage.image = UIImage(data: data!)
+        cell.twitterAvata.image = UIImage(data: data!)
         
         return cell
     }

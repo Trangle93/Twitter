@@ -15,6 +15,7 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var screenName: UILabel!
     @IBOutlet weak var tweet: UILabel!
     @IBOutlet weak var tweetImage: UIImageView!
+    @IBOutlet weak var favoriteCount: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
