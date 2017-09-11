@@ -9,37 +9,31 @@
 import UIKit
 import TwitterKit
 import SwiftyJSON
+import Social
 
-class HomeTableViewController: UITableViewController {
+class HomeTableViewController: UITableViewController{
     
+//    var alertController: UIAlertController!
+    var xxx = 35
     var numberOfRows = 0
     var tweets :[Tweet] = []
     private func loadTweets() {
         getTimeline()
     }
 
+//    @IBAction func composeTweet(_ sender: Any) {
+//        print("ok button")
+//    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.loadImageFromUrl("https://abs.twimg.com/images/themes/theme1/bg.png", <#T##imageView: UIImageView##UIImageView#>)
-        print("login sucessful")
-//        
-//        let url = URL(string: "http://pbs.twimg.com/profile_images/702185727262482432/n1JRsFeB_normal.png")
-//        let data = try? Data(contentsOf: url!)
-//        let image: UIImage = UIImage(data: data!)!
-//        getTimeline() {(results:[Tweet]) in
-//            for result in results {
-//                print("\(result)\n")
-//            }
-//        }
-//        getTimeline()
-//        let parameter : [String : AnyObject] = ["screen_name" : (session?.userName)! , "count" : "20"]
-//        let request = Twitter.sharedInstance().APIClient.URLRequestWithMethod("GET", URL: "https://api.twitter.com/1.1/statuses/user_timeline.json", parameters: parameter, error: nil)
-//        var response : NSURLResponse?
-//        let data = try! NSURLConnection.sendSynchronousRequest(request, returningResponse: &response)
-//        let arrayRep = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
-//        print(arrayRep)
-        //load data
+        
         loadTweets()
+        
+        self.tableView.estimatedRowHeight = 140
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -47,6 +41,23 @@ class HomeTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
+    
+    @IBAction func retweetUIAction(_ sender: Any) {
+        let alerController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let retweetAction = UIAlertAction(title: "Retweet", style: .default, handler: nil)
+        let quoteTweetAction = UIAlertAction(title: "Quote Tweet", style: .default, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alerController.addAction(retweetAction)
+        alerController.addAction(quoteTweetAction)
+        alerController.addAction(cancelAction)
+        self.present(alerController, animated: true, completion: nil)
+
+    }
+    
+//    func okHandler(alert: UIAlertController!) {
+//        self.navigationController?.pushViewController(UIViewController(), animated: true)
+//    }
+
     public func getTimeline() {
         //get user_timeline
         if let userID = Twitter.sharedInstance().sessionStore.session()?.userID {
@@ -65,18 +76,12 @@ class HomeTableViewController: UITableViewController {
                     do {
                         if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]] {
                             for data in json {
-//                                   print(data)
-//                                   if let retweetCountValue = try? Tweet(json: data) {
-//                                        self.tweets.append(retweetCountValue!)
-//                                    }
-                                if let userData = data["user"] as? [String: Any] {
-                                    if let item = try? Tweet(json: userData) {
-                                        self.tweets.append(item!)
-                                        self.tableView.reloadData()
-                                    }
+                                if let item = try? Tweet(json: [data]) {
+                                    self.tweets.append(item!)
+                                    self.tableView.reloadData()
                                 }
                             }
-                            print(self.tweets)
+                            print("\(self.tweets) \n")
                         }
                     } catch {
                         print(error.localizedDescription)
@@ -123,28 +128,32 @@ class HomeTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? HomeTableViewCell else {
             fatalError("cell is ot an instance")
         }
-//        if userNameArray.count != 0 {
-//            cell.screenName.text = userNameArray[indexPath.row]
-//        }
-//        for tweet in tweets {
-//            cell.userName.text = tweet.userName
-//        }
-        let url = URL(string: "http://pbs.twimg.com/profile_images/702185727262482432/n1JRsFeB_normal.png")
-        let data = try? Data(contentsOf: url!)
-//        let image: UIImage = UIImage(data: data!)!
+
         //fetches the appropriate meal for the data soucre layout
         let tweet = tweets[indexPath.row]
-//        cell.twitterAvata.image = tweet.avata
         cell.tweet.text = tweet.tweetText
         cell.userName.text = tweet.userName
         cell.screenName.text = tweet.screenName
-//        cell.favoriteCount = tweet.favoriteCount
-        cell.tweetImage.image = UIImage(data: data!)
-        cell.twitterAvata.image = UIImage(data: data!)
-        
+        cell.favoriteCount.text = String(tweet.favoriteCount)
+        cell.retweetCount.text = String(tweet.retweetCount)
+//        cell.replyCount.text = String(tweet.retweetCount)
+        if(tweet.photo != "") {
+            cell.tweetImage.image = UIImage(data: try! Data(contentsOf: (URL(string: tweet.photo))!))
+        } else {
+            cell.tweetImage.image = nil
+        }
+        cell.tweetAvata.image = UIImage(data: try! Data(contentsOf: (URL(string: tweet.avata))!))
         return cell
     }
-
+    
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UITableViewAutomaticDimension
+//    }
+//    
+//    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UITableViewAutomaticDimension
+//    }
+//
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

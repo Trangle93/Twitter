@@ -14,12 +14,10 @@ struct Tweet {
     //variables
     var userName: String = ""
     var screenName: String = ""
-//    var photo: UIImage?
-//    var avata: UIImage?
     var avata: String = ""
     var photo: String = ""
     var tweetText: String = ""
-//    var replyCount: Int
+    var replyCount: Int!
     var retweetCount: Int!
     var favoriteCount: Int!
     
@@ -28,25 +26,50 @@ struct Tweet {
         case invalid(String, Any)
     }
     
-    init?(json:[String:Any]) throws {
-        guard let userName = json["name"] as? String else {throw SerializationError.missing("user name is missing")}
-        guard let screenName = json["screen_name"] as? String else { throw SerializationError.missing("screen name is missing")}
-        guard let photo = json["profile_background_image_url_https"] as? String else { throw SerializationError.missing("screen name is missing")
+    init?(json:[[String:Any]]) throws {
+        print(json)
+        for val in json {
+//            print(val["quoted_status"])
+            guard let tweetText = val["text"] as? String else {
+                throw SerializationError.missing("text is missing")
+            }
+            guard let retweetCount = val["retweet_count"] as? Int else {
+                throw SerializationError.missing("retweet count is missing")
+            }
+            guard let favoriteCount = val["favorite_count"] as? Int else {
+                throw SerializationError.missing("favorite count is missing")
+            }
+            self.tweetText = tweetText
+            self.retweetCount = retweetCount
+            self.favoriteCount = favoriteCount
+            
+            if let entityData = val["entities"] as? [String: Any] {
+                if let mediaData = entityData["media"] as? [[String: Any]] {
+                    print(mediaData)
+                    for item in mediaData {
+                        guard let photo = item["media_url_https"] as? String else {
+                            throw SerializationError.missing("media_url_https is missing")
+                        }
+                        self.photo = photo
+                    }
+                }
+            }
+            if let userData = val["user"] as? [String: Any] {
+                guard let userName = userData["name"] as? String else {
+                    throw SerializationError.missing("name is missing")
+                }
+                guard let screenName = userData["screen_name"] as? String else {
+                    throw SerializationError.missing("screen name is missing")
+                }
+                guard let avata = userData["profile_image_url"] as? String else {
+                    throw SerializationError.missing("profile image url is missing")
+                }
+                self.userName = userName
+                self.screenName = screenName
+                self.avata = avata
+            }
         }
-        guard let avata = json["profile_image_url"] as? String else { throw SerializationError.missing("avata image is missing")
-        }
-        guard let tweetText = json["description"] as? String else { throw SerializationError.missing("description is missing")}
-        guard let favoriteCount = json["favourites_count"] as? Int else { throw SerializationError.missing("favourites_count is missing")}
-       // guard let retweetCount = json["source"] as? Int else { throw SerializationError.missing("retweet_count is missing")}
-
-        self.userName = userName
-        self.screenName = screenName
-        self.tweetText = tweetText
-        self.photo = photo
-        self.avata = avata
-        self.favoriteCount = favoriteCount as! Int
-//       self.retweetCount = retweetCount as! Int
-
     }
 }
+
 

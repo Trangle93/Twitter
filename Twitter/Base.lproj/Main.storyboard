@@ -6,6 +6,7 @@
     <dependencies>
         <deployment version="4144" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -76,78 +77,151 @@
         <scene sceneID="q9v-ar-QGy">
             <objects>
                 <tableViewController id="b5Y-J2-n3K" customClass="HomeTableViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="250" sectionHeaderHeight="28" sectionFooterHeight="28" id="Gp6-co-TJP">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="254" sectionHeaderHeight="28" sectionFooterHeight="28" id="Gp6-co-TJP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeTableViewCell" rowHeight="250" id="b4E-l6-EpH" customClass="HomeTableViewCell" customModule="Twitter" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="250"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeTableViewCell" rowHeight="240" id="b4E-l6-EpH" customClass="HomeTableViewCell" customModule="Twitter" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="240"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b4E-l6-EpH" id="Q67-0R-Sj9">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-example" translatesAutoresizingMaskIntoConstraints="NO" id="CY1-gq-hGh">
-                                            <rect key="frame" x="8" y="8" width="52" height="47"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TechCrunch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uq-ct-EJS">
-                                            <rect key="frame" x="68" y="1" width="133" height="19"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-example" translatesAutoresizingMaskIntoConstraints="NO" id="t2U-eD-Zuk">
-                                            <rect key="frame" x="61" y="63" width="306" height="150"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twitter-retweet_Image" translatesAutoresizingMaskIntoConstraints="NO" id="3fO-9M-aZ3">
-                                            <rect key="frame" x="161" y="221" width="24" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twitter-reply-Image" translatesAutoresizingMaskIntoConstraints="NO" id="Mq8-YX-7Wx">
-                                            <rect key="frame" x="68" y="220" width="26" height="22"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twitter-meassage-Image" translatesAutoresizingMaskIntoConstraints="NO" id="q8C-5y-WI7">
-                                            <rect key="frame" x="335" y="216" width="19" height="26"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jg-ey-euw">
-                                            <rect key="frame" x="68" y="16" width="299" height="49"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <string key="text">Control-drag from the rating control on your canvas to the code display in the editor on the right, stopping the drag at the line just below the photoImageView property in MealTableViewCell.swift.</string>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4r-z8-6F6">
-                                            <rect key="frame" x="218" y="2" width="141" height="17"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tO3-IT-Vxa">
+                                            <rect key="frame" x="50" y="0.0" width="321" height="14.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twitter-heart-Image" translatesAutoresizingMaskIntoConstraints="NO" id="dlr-FH-Mvv">
-                                            <rect key="frame" x="244" y="221" width="16" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biv-NQ-7kA">
-                                            <rect key="frame" x="93" y="224" width="18" height="15"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="userName" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Odh-LX-qEh">
+                                            <rect key="frame" x="61" y="16" width="66" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView:Lx7-h3-c8z:image" translatesAutoresizingMaskIntoConstraints="NO" id="Lx7-h3-c8z">
+                                            <rect key="frame" x="12" y="16" width="45" height="45"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="Ie5-gU-aj0"/>
+                                                <constraint firstAttribute="width" constant="45" id="TVX-jY-5R0"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="imageView:NXk-Ql-Mvs:image" translatesAutoresizingMaskIntoConstraints="NO" id="NXk-Ql-Mvs">
+                                            <rect key="frame" x="61" y="80" width="302" height="126"/>
+                                        </imageView>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" text="textTweet" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="anu-4e-xrB">
+                                            <rect key="frame" x="61" y="35" width="302" height="37"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="screenName" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oq-EK-L8t">
+                                            <rect key="frame" x="135" y="16" width="81.5" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTH-VY-naJ">
+                                            <rect key="frame" x="151" y="205" width="6" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="bSW-2M-3Go"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter-meassage-Image" translatesAutoresizingMaskIntoConstraints="NO" id="vVS-tf-geC">
+                                            <rect key="frame" x="259" y="204" width="17" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="E3g-Nt-6LL"/>
+                                                <constraint firstAttribute="width" constant="17" id="Eze-cY-Fpu"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nkh-Ad-y5L">
+                                            <rect key="frame" x="213" y="204.5" width="6" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="oQ6-7C-5At"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GIi-QF-cKk">
+                                            <rect key="frame" x="129" y="206" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="NC1-L4-hMC"/>
+                                                <constraint firstAttribute="width" constant="20" id="g4Y-26-A0Q"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <state key="normal" image="twitter-retweet_Image"/>
+                                            <connections>
+                                                <action selector="retweetUIAction:" destination="b5Y-J2-n3K" eventType="touchUpInside" id="g4W-iy-d2c"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rrv-z9-2c7">
+                                            <rect key="frame" x="61" y="204" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="EVo-uk-dxt"/>
+                                                <constraint firstAttribute="height" constant="20" id="ZtH-ja-dYG"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <state key="normal" image="twitter-reply-Image"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqC-Z1-1g7">
+                                            <rect key="frame" x="197" y="209" width="14" height="14"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="14" id="PU7-Mu-Cff"/>
+                                                <constraint firstAttribute="height" constant="14" id="f7G-gW-95m"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <state key="normal" image="twitter-heart-Image"/>
+                                        </button>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="nkh-Ad-y5L" secondAttribute="bottom" constant="6" id="4vM-ih-Gya"/>
+                                        <constraint firstItem="Odh-LX-qEh" firstAttribute="leading" secondItem="Lx7-h3-c8z" secondAttribute="trailing" constant="4" id="7mw-wh-dE3" userLabel="User Name.leading = Tweet Avata.trailing + 6"/>
+                                        <constraint firstItem="Odh-LX-qEh" firstAttribute="top" secondItem="tO3-IT-Vxa" secondAttribute="bottom" constant="2" id="7q6-vY-XZZ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="4oq-EK-L8t" secondAttribute="trailing" constant="4" id="A7Y-Zr-M5m"/>
+                                        <constraint firstItem="4oq-EK-L8t" firstAttribute="top" secondItem="tO3-IT-Vxa" secondAttribute="bottom" constant="2" id="Gfy-5H-mh1"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="vVS-tf-geC" secondAttribute="bottom" constant="3" id="IGs-rj-cYr"/>
+                                        <constraint firstItem="4oq-EK-L8t" firstAttribute="leading" secondItem="Odh-LX-qEh" secondAttribute="trailing" constant="2" id="Jxw-EN-A6Q"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="aqC-Z1-1g7" secondAttribute="bottom" constant="9" id="Ka3-Eo-nAn"/>
+                                        <constraint firstItem="GIi-QF-cKk" firstAttribute="leading" secondItem="Rrv-z9-2c7" secondAttribute="trailing" constant="48" id="LA7-Bc-mYk"/>
+                                        <constraint firstItem="NXk-Ql-Mvs" firstAttribute="leading" secondItem="Q67-0R-Sj9" secondAttribute="leadingMargin" constant="53" id="LiN-G9-XkS"/>
+                                        <constraint firstItem="tO3-IT-Vxa" firstAttribute="top" secondItem="Q67-0R-Sj9" secondAttribute="top" id="Lzm-WE-Fdl"/>
+                                        <constraint firstItem="Lx7-h3-c8z" firstAttribute="top" secondItem="tO3-IT-Vxa" secondAttribute="bottom" constant="2" id="MCG-k8-Xi4"/>
+                                        <constraint firstItem="anu-4e-xrB" firstAttribute="leading" secondItem="Lx7-h3-c8z" secondAttribute="trailing" constant="4" id="MCS-Dx-Ghj"/>
+                                        <constraint firstItem="anu-4e-xrB" firstAttribute="top" secondItem="4oq-EK-L8t" secondAttribute="bottom" constant="2" id="Opb-ma-GTi"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="NXk-Ql-Mvs" secondAttribute="bottom" constant="26" id="UYs-v1-01h"/>
+                                        <constraint firstItem="NXk-Ql-Mvs" firstAttribute="top" secondItem="anu-4e-xrB" secondAttribute="bottom" constant="2" id="Va4-ow-gpo"/>
+                                        <constraint firstItem="Rrv-z9-2c7" firstAttribute="leading" secondItem="Q67-0R-Sj9" secondAttribute="leadingMargin" constant="53" id="Vi2-3Z-OWQ"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Rrv-z9-2c7" secondAttribute="bottom" constant="8" id="WGM-tE-HhK"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="4oq-EK-L8t" secondAttribute="trailing" constant="4" id="XDm-J7-eJE"/>
+                                        <constraint firstItem="tO3-IT-Vxa" firstAttribute="leading" secondItem="Q67-0R-Sj9" secondAttribute="leading" constant="50" id="ZGK-fq-jYj"/>
+                                        <constraint firstItem="nkh-Ad-y5L" firstAttribute="leading" secondItem="aqC-Z1-1g7" secondAttribute="trailing" constant="2" id="Zyq-u2-6jj"/>
+                                        <constraint firstItem="aqC-Z1-1g7" firstAttribute="leading" secondItem="iTH-VY-naJ" secondAttribute="trailing" constant="40" id="eCh-cc-xpE"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="anu-4e-xrB" secondAttribute="trailing" constant="4" id="ii1-5S-Kgo"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="iTH-VY-naJ" secondAttribute="bottom" constant="6" id="kEc-sG-wdD"/>
+                                        <constraint firstItem="iTH-VY-naJ" firstAttribute="leading" secondItem="GIi-QF-cKk" secondAttribute="trailing" constant="2" id="okm-Dw-S27"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="GIi-QF-cKk" secondAttribute="bottom" constant="6" id="qV5-UG-x3k"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="vVS-tf-geC" secondAttribute="trailing" constant="91" id="ros-aF-Tnc"/>
+                                        <constraint firstItem="vVS-tf-geC" firstAttribute="leading" secondItem="nkh-Ad-y5L" secondAttribute="trailing" constant="40" id="slW-nY-f0m"/>
+                                        <constraint firstAttribute="trailing" secondItem="tO3-IT-Vxa" secondAttribute="trailing" constant="4" id="sm8-zW-Q20"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="NXk-Ql-Mvs" secondAttribute="trailing" constant="4" id="yUA-tD-xH1"/>
+                                        <constraint firstItem="NXk-Ql-Mvs" firstAttribute="top" secondItem="anu-4e-xrB" secondAttribute="bottom" id="yqU-mT-7jg"/>
+                                        <constraint firstItem="Lx7-h3-c8z" firstAttribute="leading" secondItem="Q67-0R-Sj9" secondAttribute="leadingMargin" constant="4" id="zW7-FZ-Ff1"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="favoriteCount" destination="biv-NQ-7kA" id="Aal-7H-daX"/>
-                                    <outlet property="screenName" destination="l4r-z8-6F6" id="bZe-ey-iOC"/>
-                                    <outlet property="tweet" destination="3Jg-ey-euw" id="YeY-8d-lR6"/>
-                                    <outlet property="tweetImage" destination="t2U-eD-Zuk" id="yL7-2e-R4h"/>
-                                    <outlet property="twitterAvata" destination="CY1-gq-hGh" id="Dnu-wC-nhT"/>
-                                    <outlet property="userName" destination="9uq-ct-EJS" id="2Ub-w5-FAN"/>
+                                    <outlet property="favoriteCount" destination="nkh-Ad-y5L" id="pOg-1T-xcB"/>
+                                    <outlet property="retweetCount" destination="iTH-VY-naJ" id="e4N-BG-7X6"/>
+                                    <outlet property="screenName" destination="4oq-EK-L8t" id="JH7-Ws-l3r"/>
+                                    <outlet property="tweet" destination="anu-4e-xrB" id="VRI-eS-Qr7"/>
+                                    <outlet property="tweetAvata" destination="Lx7-h3-c8z" id="cpH-hB-6nR"/>
+                                    <outlet property="tweetImage" destination="NXk-Ql-Mvs" id="5ur-mD-Y57"/>
+                                    <outlet property="userName" destination="Odh-LX-qEh" id="Kvp-No-00a"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -157,7 +231,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Edu-6h-mID">
-                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" style="plain" id="uaK-F2-fZn">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LH0-fJ-OHC">
                                 <rect key="frame" x="16" y="7" width="26" height="30"/>
@@ -171,11 +244,23 @@
                             <state key="normal" image="twitter_logo_blue"/>
                         </button>
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" style="plain" id="12w-pV-Tqh"/>
+                            <barButtonItem style="plain" id="wQ7-a7-hEe">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="n8K-UK-2hM">
+                                    <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="composeTweet:" destination="b5Y-J2-n3K" eventType="touchUpInside" id="H6a-In-8TV"/>
+                                    </connections>
+                                </button>
+                                <connections>
+                                    <action selector="composeTweet:" destination="b5Y-J2-n3K" id="HJO-fY-XlC"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem style="plain" id="1Vw-vg-5ds">
                                 <inset key="imageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="M5I-CM-7zE">
-                                    <rect key="frame" x="297" y="12" width="20" height="20"/>
+                                    <rect key="frame" x="248" y="12" width="20" height="20"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" image="twitter-lookup-Image"/>
                                 </button>
@@ -185,7 +270,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UZ2-fS-CFt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2940" y="-372.86356821589209"/>
+            <point key="canvasLocation" x="2989.5999999999999" y="-374.66266866566718"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="QfA-7w-Hk2">
@@ -222,7 +307,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Notifications" image="notification" id="t1O-Fb-pzb">
-                        <inset key="imageInsets" minX="49" minY="56" maxX="49" maxY="53"/>
+                        <inset key="imageInsets" minX="52" minY="58" maxX="52" maxY="53"/>
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1AL-aN-rsw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -234,7 +319,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AnD-Bp-mAX" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="yDa-8T-DyQ">
-                        <inset key="imageInsets" minX="121" minY="99" maxX="121" maxY="96"/>
+                        <inset key="imageInsets" minX="124" minY="98" maxX="124" maxY="96"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="of0-9M-UWO">
@@ -243,7 +328,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="b5Y-J2-n3K" kind="relationship" relationship="rootViewController" id="mJV-Nb-diP"/>
+                        <segue destination="b5Y-J2-n3K" kind="relationship" relationship="rootViewController" id="7dC-Xp-ulf"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ss-Xg-Mjv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -264,7 +349,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Message" image="twitter-meassage-Image" id="ufn-kl-NTs">
-                        <inset key="imageInsets" minX="101" minY="96" maxX="101" maxY="94"/>
+                        <inset key="imageInsets" minX="102" minY="97" maxX="102" maxY="94"/>
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KjZ-jX-dxu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -285,7 +370,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Me" image="follower" id="fqh-q0-bbQ">
-                        <inset key="imageInsets" minX="9" minY="13" maxX="9" maxY="7"/>
+                        <inset key="imageInsets" minX="11" minY="15" maxX="11" maxY="7"/>
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vF4-l5-MzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -294,9 +379,230 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image-example" width="30" height="30"/>
         <image name="follower" width="64" height="64"/>
         <image name="home" width="517" height="371"/>
+        <image name="imageView:Lx7-h3-c8z:image" width="30" height="30">
+            <mutableData key="keyedArchiveRepresentation">
+YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
+GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
+c1dOU0NvbG9ygAKADRIgwAAAgAOAC1h7MzAsIDMwfdIVChYYWk5TLm9iamVjdHOhF4AEgArSFQoaHaIb
+HIAFgAaACRAA0iAKISJfEBROU1RJRkZSZXByZXNlbnRhdGlvboAHgAhPERauTU0AKgAADhgAAAAAAAAA
+AAAAAAAAAAAAAQ0SFgIVHSACFB4hAhYgJAIXISQCFyEkAhchJAIXISQCFyEkAhchJAIXISQCFyEkAhch
+JAIXISQCFyEkAhchJAIXISQCFyEkAhYfIwIUHSECFB0hAQ0TFwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAEOFBgMYYuWEpXV3ROb3ecTm97nFJ7h6hSe4eoUnuHqFJ7h6hSe4eoUnuHqFJ7h6hSe4eoUnuHqFJ7h
+6hSe4eoUnuHqFJ7h6hSe4eoUnuHqFJ7g6ROb3ucTm97nE5TV3gxokZwCEhoeAAAAAAAAAAAAAAAAAQ8U
+GBCEusUWsvz/Fary/xWn8P8Vp/D/Fafw/xWn8P8Vp/D/Fafw/xWn8P8Vp/D/Fafw/xWn8P8Vp/D/Fafw
+/xWn8P8Vp/D/Fafw/xan8P8Vp/D/Fafw/xWn8P8Vp/D/Fajy/xay/P8QicHOAhIbHwAAAAAAAAAADF6G
+jxay/P8Vpez/Fabt/xWm7f8Vpu3/Fabt/xWm7f8Vpu3/Fabt/xWm7f8Vpu3/Fabt/xWm7f8Vpu3/Fabt
+/xam7f8Xo+z/FqHs/xSj7P8Xoez/FqTt/xam7f8Vpu3/Fabt/xal7P8WsPz/DGiRnQAAAAIBCg8REY7N
+2haq8/8WpOz/FqXt/xWm7f8Vpu3/Fabt/xWm7f8Vpu3/Fabt/xWm7f8Vpu3/Fabt/xWm7f8Vpu3/FqTs
+/yCn7f9ew/P/m9f3/6Pb9/+R1Pb/Rrnx/xqk7f8Wpe3/FqPs/xqj7f8rsfP/FZXU4AENExcCFh4hE53f
+5xel8P9KufH/MLHu/xek7P8Vpu3/Fabt/xWm7f8Vpu3/Fabt/xWm7f8Vpu3/Fabt/xWm7f8WpOz/O7Tw
+/8rr+v///////////////////////vz+/53b9/8zr+7/RLrx/6zf+f+C0Pn/E5je5wMWHiECFR0gFJve
+5xil7v+04vr/1Oz7/y6t7v8Wo+z/Fqbt/xWm7f8Vpu3/Fabt/xWm7f8Vpu3/Fabt/xak7f8rsO7/3/H8
+///////////////////////////////////////z+f7///7//8vq+v8prfH/H5/d5wIUHSECFiAkFZ3h
+6iir8P/f8fz//////9Pu+/81s/D/FqLs/xem7f8Vpu3/Fabt/xWm7f8Vpu3/Fqbt/xej7P+i2/f/////
+////////////////////////////////////////////7ff8/5vW9v+q3/r/Parf5wISHSECFyEkFZ7h
+6iqr8P/k8vz////////////s9/7/bcjz/x2m7f8Xo+z/F6bt/xam7f8Vpu3/Fqbt/yOr7f/l9Pz/////
+/////////////////////////////////////////////v////n7/v9jxfb/FJjd5wMWHSECFiEkFp7h
+6hym8P++5vr//////////////////////8bn+v9bwPH/Iant/xij7P8Xo+z/FqHt/zix8P/6+/7/////
+////////////////////////////////////////////8Pn+/1m+8v8XpPD/FJve5wIUHSECFyEkFJ7h
+6hak7v9ryPP/////////////////////////////////1+/7/5nX9v9WwPL/PLLw/0638f/0+v7/////
+////////////////////////////////////////////0Ov7/yCl7f8Xp/D/E5ve5wIUHSECFyEkFJ7h
+6hip8P8oqe3/st/5//7+////////////////////////////////////////+vv+/+z2/v/7/v7/////
+////////////////////////////////////////////x+n6/x+m7f8Xp/D/E5ve5wIUHSECFyEkFZ7h
+6ius8f+84fn/otj3/+z2/v//////////////////////////////////////////////////////////
+////////////////////////////////////////////rOD5/xak7P8Xp/D/E5ve5wIUHSECFiEkFp7h
+6h6m8P/K6vv///////7/////////////////////////////////////////////////////////////
+////////////////////////////////////////////kdL2/xeh7P8Vp/D/E5ve5wIUHSECFyEkFJ7h
+6hek7v9wyfX/////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////v//U7/y/xej7P8Vp/D/E5ve5wIUHSECFyEkFJ7h
+6han8P8dpu3/seH5////////////////////////////////////////////////////////////////
+///////////////////////////////////////m9Pz/Kazu/xam7f8Vp/D/E5ve5wIUHSECFyEkFJ7h
+6hWn8P8Wpe3/H6nt/43U9f/r9v7/////////////////////////////////////////////////////
+//////////////////////////////////////+Y1/f/F6Ps/xam7f8Vp/D/E5ve5wIUHSECFyEkFJ7h
+6hWn8P8Wpu3/Iant/3jN8/+44fn/+fv+////////////////////////////////////////////////
+//////////////////////////////////b7/v86tPD/FqTt/xWm7f8Vp/D/E5ve5wIUHSECFyEkFJ7h
+6hWn8P8Wpu3/G6Tt/6jc9////////v//////////////////////////////////////////////////
+/////////////////////////////////5XX9v8Xo+z/Fqbt/xWm7f8Vp/D/E5ve5wIUHSECFyEkFJ7h
+6hWn8P8Vpu3/FqXt/yKr7f/E6fr/////////////////////////////////////////////////////
+////////////////////////////3fD8/yes7v8Wpe3/Fabt/xWm7f8Vp/D/E5ve5wIUHSECFyEkFJ7h
+6hWn8P8Vpu3/Fabt/xak7P8hq+3/lNb2/+r1/P/2+/7/////////////////////////////////////
+///////////////////////2+v7/Sbnx/xaj7f8Vpu3/Fabt/xWm7f8Vp/D/E5ve5wIUHSECFyEkFJ7h
+6han8P8Wpu3/Fqbt/xam7f8XpO3/FJ/s/zOt7v+z3/n/////////////////////////////////////
+//////////////////r7/v9XwvL/FaPs/xam7f8Vpu3/Fabt/xWm7f8Vp/D/E5ve5wIUHSECFh8jFJ3h
+6Rem8P8Uouz/FaPs/xqj7P8hqu3/XMLy/7/n+v/7/v//////////////////////////////////////
+////////////6/X8/1G+8f8Vo+z/Fqbt/xWm7f8Vpu3/Fabt/xWm7f8Vp/D/E5ve5wIUHSECFB0hFpve
+51jA9f+C0fX/h9T2/7Th+f/j8fz/////////////////////////////////////////////////////
+///+//+14vn/NbLu/xaj7P8Wpu3/Fabt/xWm7f8Vpu3/Fabt/xWm7f8Vp/D/E5ve5wIUHSECFB0hE5re
+5yit8f92yvP/1+z7///////////////////////////////////////////////////////6+/7/v+b6
+/1XA8v8bpe3/FqTs/xWm7f8Vpu3/Fabt/xWm7f8Vpu3/Fabt/xWm7f8Vp/D/E5ve5wIUHiEBCA0QEY3L
+2Baq8/8Woez/IKbt/0S58f+I0PX/seH5/9bt+//l8vz/6fT8/+Hx/P/O6/v/pt/5/33M9f86tPD/G6Xs
+/xaj7P8Wpu3/Fabt/xWm7f8Vpu3/Fabt/xWm7f8Vpu3/Fabt/xWm7f8VqvL/E5TR3gEMERUAAAAAC1h+
+iBay/P8Vpez/Fqbt/xak7f8Xoez/F6Ts/yWn7f8sq+7/Lqvu/yuq7v8ipu3/FqPs/xij7P8WpO3/Fqbt
+/xWm7f8Vpu3/Fabt/xWm7f8Vpu3/Fabt/xWm7f8Vpu3/Fabt/xWl7P8Wsv3/DGGKkwABAQEAAAAAAQsP
+ExB8r7oWsvz/Favz/xWn8P8Vp/D/F6fw/xen8P8Xp/D/F6fw/xen8P8Xp/D/F6fw/xWn8P8Vp/D/Fafw
+/xWn8P8Vp/D/Fafw/xWn8P8Vp/D/Fafw/xWn8P8Vp/D/Favz/xaw/P8Qg7nFAQ8WGQAAAAAAAAAAAAAA
+AAEJDhILWH2IEY7K1xOb3ucTm97nE5ve5xOb3ucTm97nE5ve5xOb3ucTm97nE5ve5xOb3ucTm97nE5ve
+5xOb3ucTm97nE5ve5xOb3ucTm97nE5ve5xOb3ucTnd7nEZDN2QtagYsBDBIVAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAQgMEAIUHSECFB0hAhQdIQIUHSECFB0hAhQdIQIUHSECFB0hAhQdIQIUHSECFB0hAhQd
+IQIUHSECFB0hAhQdIQIUHSECFB0hAhQdIQIUHSECFh4hAQkOEQAAAAAAAAAAAAAAAAAAAAAADgEAAAMA
+AAABAB4AAAEBAAMAAAABAB4AAAECAAMAAAAEAAAOxgEDAAMAAAABAAEAAAEGAAMAAAABAAIAAAERAAQA
+AAABAAAACAESAAMAAAABAAEAAAEVAAMAAAABAAQAAAEWAAMAAAABAB4AAAEXAAQAAAABAAAOEAEcAAMA
+AAABAAEAAAFSAAMAAAABAAEAAAFTAAMAAAAEAAAOzodzAAcAAAfYAAAO1gAAAAAACAAIAAgACAABAAEA
+AQABAAAH2GFwcGwCIAAAbW50clJHQiBYWVogB9kAAgAZAAsAGgALYWNzcEFQUEwAAAAAYXBwbAAAAAAA
+AAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1hcHBsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAALZGVzYwAAAQgAAABvZHNjbQAAAXgAAAWcY3BydAAABxQAAAA4d3RwdAAAB0wA
+AAAUclhZWgAAB2AAAAAUZ1hZWgAAB3QAAAAUYlhZWgAAB4gAAAAUclRSQwAAB5wAAAAOY2hhZAAAB6wA
+AAAsYlRSQwAAB5wAAAAOZ1RSQwAAB5wAAAAOZGVzYwAAAAAAAAAUR2VuZXJpYyBSR0IgUHJvZmlsZQAA
+AAAAAAAAAAAAFEdlbmVyaWMgUkdCIFByb2ZpbGUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAG1sdWMAAAAAAAAAHwAAAAxza1NLAAAAKAAAAYRkYURLAAAALgAAAaxj
+YUVTAAAAJAAAAdp2aVZOAAAAJAAAAf5wdEJSAAAAJgAAAiJ1a1VBAAAAKgAAAkhmckZVAAAAKAAAAnJo
+dUhVAAAAKAAAApp6aFRXAAAAFgAAAsJuYk5PAAAAJgAAAthjc0NaAAAAIgAAAv5oZUlMAAAAHgAAAyBp
+dElUAAAAKAAAAz5yb1JPAAAAJAAAA2ZkZURFAAAALAAAA4prb0tSAAAAFgAAA7ZzdlNFAAAAJgAAAth6
+aENOAAAAFgAAA8xqYUpQAAAAGgAAA+JlbEdSAAAAIgAAA/xwdFBPAAAAJgAABB5ubE5MAAAAKAAABERl
+c0VTAAAAJgAABB50aFRIAAAAJAAABGx0clRSAAAAIgAABJBmaUZJAAAAKAAABLJockhSAAAAKAAABNpw
+bFBMAAAALAAABQJydVJVAAAAIgAABS5hckVHAAAAJgAABVBlblVTAAAAJgAABXYAVgFhAGUAbwBiAGUA
+YwBuAP0AIABSAEcAQgAgAHAAcgBvAGYAaQBsAEcAZQBuAGUAcgBlAGwAIABSAEcAQgAtAGIAZQBzAGsA
+cgBpAHYAZQBsAHMAZQBQAGUAcgBmAGkAbAAgAFIARwBCACAAZwBlAG4A6AByAGkAYwBDHqUAdQAgAGgA
+7ABuAGgAIABSAEcAQgAgAEMAaAB1AG4AZwBQAGUAcgBmAGkAbAAgAFIARwBCACAARwBlAG4A6QByAGkA
+YwBvBBcEMAQzBDAEOwRMBD0EOAQ5ACAEPwRABD4ERAQwBDkEOwAgAFIARwBCAFAAcgBvAGYAaQBsACAA
+ZwDpAG4A6QByAGkAcQB1AGUAIABSAFYAQgDBAGwAdABhAGwA4QBuAG8AcwAgAFIARwBCACAAcAByAG8A
+ZgBpAGyQGnUoACAAUgBHAEIAIIJyX2ljz4/wAEcAZQBuAGUAcgBpAHMAawAgAFIARwBCAC0AcAByAG8A
+ZgBpAGwATwBiAGUAYwBuAP0AIABSAEcAQgAgAHAAcgBvAGYAaQBsBeQF6AXVBeQF2QXcACAAUgBHAEIA
+IAXbBdwF3AXZAFAAcgBvAGYAaQBsAG8AIABSAEcAQgAgAGcAZQBuAGUAcgBpAGMAbwBQAHIAbwBmAGkA
+bAAgAFIARwBCACAAZwBlAG4AZQByAGkAYwBBAGwAbABnAGUAbQBlAGkAbgBlAHMAIABSAEcAQgAtAFAA
+cgBvAGYAaQBsx3y8GAAgAFIARwBCACDVBLhc0wzHfGZukBoAIABSAEcAQgAgY8+P8GWHTvZOAIIsACAA
+UgBHAEIAIDDXMO0w1TChMKQw6wOTA7UDvQO5A7oDzAAgA8ADwQO/A8YDrwO7ACAAUgBHAEIAUABlAHIA
+ZgBpAGwAIABSAEcAQgAgAGcAZQBuAOkAcgBpAGMAbwBBAGwAZwBlAG0AZQBlAG4AIABSAEcAQgAtAHAA
+cgBvAGYAaQBlAGwOQg4bDiMORA4fDiUOTAAgAFIARwBCACAOFw4xDkgOJw5EDhsARwBlAG4AZQBsACAA
+UgBHAEIAIABQAHIAbwBmAGkAbABpAFkAbABlAGkAbgBlAG4AIABSAEcAQgAtAHAAcgBvAGYAaQBpAGwA
+aQBHAGUAbgBlAHIAaQENAGsAaQAgAFIARwBCACAAcAByAG8AZgBpAGwAVQBuAGkAdwBlAHIAcwBhAGwA
+bgB5ACAAcAByAG8AZgBpAGwAIABSAEcAQgQeBDEESQQ4BDkAIAQ/BEAEPgREBDgEOwRMACAAUgBHAEIG
+RQZEBkEAIAYqBjkGMQZKBkEAIABSAEcAQgAgBicGRAY5BicGRQBHAGUAbgBlAHIAaQBjACAAUgBHAEIA
+IABQAHIAbwBmAGkAbABldGV4dAAAAABDb3B5cmlnaHQgMjAwNyBBcHBsZSBJbmMuLCBhbGwgcmlnaHRz
+IHJlc2VydmVkLgBYWVogAAAAAAAA81IAAQAAAAEWz1hZWiAAAAAAAAB0TQAAPe4AAAPQWFlaIAAAAAAA
+AFp1AACscwAAFzRYWVogAAAAAAAAKBoAABWfAAC4NmN1cnYAAAAAAAAAAQHNAABzZjMyAAAAAAABDEIA
+AAXe///zJgAAB5IAAP2R///7ov///aMAAAPcAADAbNIlJicoWiRjbGFzc25hbWVYJGNsYXNzZXNfEBBO
+U0JpdG1hcEltYWdlUmVwoycpKlpOU0ltYWdlUmVwWE5TT2JqZWN00iUmLC1XTlNBcnJheaIsKtIlJi8w
+Xk5TTXV0YWJsZUFycmF5oy8sKtMyMwo0NTZXTlNXaGl0ZVxOU0NvbG9yU3BhY2VEMCAwABADgAzSJSY4
+OVdOU0NvbG9yojgq0iUmOzxXTlNJbWFnZaI7Kl8QD05TS2V5ZWRBcmNoaXZlctE/QFRyb290gAEACAAR
+ABoAIwAtADIANwBGAEwAVwBeAGUAcgB5AIEAgwCFAIoAjACOAJcAnACnAKkAqwCtALIAtQC3ALkAuwC9
+AMIA2QDbAN0XjxeUF58XqBe7F78XyhfTF9gX4BfjF+gX9xf7GAIYChgXGBwYHhggGCUYLRgwGDUYPRhA
+GFIYVRhaAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAAGFw
+</mutableData>
+        </image>
+        <image name="imageView:NXk-Ql-Mvs:image" width="30" height="30">
+            <mutableData key="keyedArchiveRepresentation">
+YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
+GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
+c1dOU0NvbG9ygAKADRIgwAAAgAOAC1h7MzAsIDMwfdIVChYYWk5TLm9iamVjdHOhF4AEgArSFQoaHaIb
+HIAFgAaACRAA0iAKISJfEBROU1RJRkZSZXByZXNlbnRhdGlvboAHgAhPERauTU0AKgAADhgAAAAAAAAA
+AAAAAAAAAAAAAQ0SFgIVHSACFB4hAhYgJAIXISQCFyEkAhchJAIXISQCFyEkAhchJAIXISQCFyEkAhch
+JAIXISQCFyEkAhchJAIXISQCFyEkAhYfIwIUHSECFB0hAQ0TFwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAEOFBgMYYuWEpXV3ROb3ecTm97nFJ7h6hSe4eoUnuHqFJ7h6hSe4eoUnuHqFJ7h6hSe4eoUnuHqFJ7h
+6hSe4eoUnuHqFJ7h6hSe4eoUnuHqFJ7g6ROb3ucTm97nE5TV3gxokZwCEhoeAAAAAAAAAAAAAAAAAQ8U
+GBCEusUWsvz/Fary/xWn8P8Vp/D/Fafw/xWn8P8Vp/D/Fafw/xWn8P8Vp/D/Fafw/xWn8P8Vp/D/Fafw
+/xWn8P8Vp/D/Fafw/xan8P8Vp/D/Fafw/xWn8P8Vp/D/Fajy/xay/P8QicHOAhIbHwAAAAAAAAAADF6G
+jxay/P8Vpez/Fabt/xWm7f8Vpu3/Fabt/xWm7f8Vpu3/Fabt/xWm7f8Vpu3/Fabt/xWm7f8Vpu3/Fabt
+/xam7f8Xo+z/FqHs/xSj7P8Xoez/FqTt/xam7f8Vpu3/Fabt/xal7P8WsPz/DGiRnQAAAAIBCg8REY7N
+2haq8/8WpOz/FqXt/xWm7f8Vpu3/Fabt/xWm7f8Vpu3/Fabt/xWm7f8Vpu3/Fabt/xWm7f8Vpu3/FqTs
+/yCn7f9ew/P/m9f3/6Pb9/+R1Pb/Rrnx/xqk7f8Wpe3/FqPs/xqj7f8rsfP/FZXU4AENExcCFh4hE53f
+5xel8P9KufH/MLHu/xek7P8Vpu3/Fabt/xWm7f8Vpu3/Fabt/xWm7f8Vpu3/Fabt/xWm7f8WpOz/O7Tw
+/8rr+v///////////////////////vz+/53b9/8zr+7/RLrx/6zf+f+C0Pn/E5je5wMWHiECFR0gFJve
+5xil7v+04vr/1Oz7/y6t7v8Wo+z/Fqbt/xWm7f8Vpu3/Fabt/xWm7f8Vpu3/Fabt/xak7f8rsO7/3/H8
+///////////////////////////////////////z+f7///7//8vq+v8prfH/H5/d5wIUHSECFiAkFZ3h
+6iir8P/f8fz//////9Pu+/81s/D/FqLs/xem7f8Vpu3/Fabt/xWm7f8Vpu3/Fqbt/xej7P+i2/f/////
+////////////////////////////////////////////7ff8/5vW9v+q3/r/Parf5wISHSECFyEkFZ7h
+6iqr8P/k8vz////////////s9/7/bcjz/x2m7f8Xo+z/F6bt/xam7f8Vpu3/Fqbt/yOr7f/l9Pz/////
+/////////////////////////////////////////////v////n7/v9jxfb/FJjd5wMWHSECFiEkFp7h
+6hym8P++5vr//////////////////////8bn+v9bwPH/Iant/xij7P8Xo+z/FqHt/zix8P/6+/7/////
+////////////////////////////////////////////8Pn+/1m+8v8XpPD/FJve5wIUHSECFyEkFJ7h
+6hak7v9ryPP/////////////////////////////////1+/7/5nX9v9WwPL/PLLw/0638f/0+v7/////
+////////////////////////////////////////////0Ov7/yCl7f8Xp/D/E5ve5wIUHSECFyEkFJ7h
+6hip8P8oqe3/st/5//7+////////////////////////////////////////+vv+/+z2/v/7/v7/////
+////////////////////////////////////////////x+n6/x+m7f8Xp/D/E5ve5wIUHSECFyEkFZ7h
+6ius8f+84fn/otj3/+z2/v//////////////////////////////////////////////////////////
+////////////////////////////////////////////rOD5/xak7P8Xp/D/E5ve5wIUHSECFiEkFp7h
+6h6m8P/K6vv///////7/////////////////////////////////////////////////////////////
+////////////////////////////////////////////kdL2/xeh7P8Vp/D/E5ve5wIUHSECFyEkFJ7h
+6hek7v9wyfX/////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////v//U7/y/xej7P8Vp/D/E5ve5wIUHSECFyEkFJ7h
+6han8P8dpu3/seH5////////////////////////////////////////////////////////////////
+///////////////////////////////////////m9Pz/Kazu/xam7f8Vp/D/E5ve5wIUHSECFyEkFJ7h
+6hWn8P8Wpe3/H6nt/43U9f/r9v7/////////////////////////////////////////////////////
+//////////////////////////////////////+Y1/f/F6Ps/xam7f8Vp/D/E5ve5wIUHSECFyEkFJ7h
+6hWn8P8Wpu3/Iant/3jN8/+44fn/+fv+////////////////////////////////////////////////
+//////////////////////////////////b7/v86tPD/FqTt/xWm7f8Vp/D/E5ve5wIUHSECFyEkFJ7h
+6hWn8P8Wpu3/G6Tt/6jc9////////v//////////////////////////////////////////////////
+/////////////////////////////////5XX9v8Xo+z/Fqbt/xWm7f8Vp/D/E5ve5wIUHSECFyEkFJ7h
+6hWn8P8Vpu3/FqXt/yKr7f/E6fr/////////////////////////////////////////////////////
+////////////////////////////3fD8/yes7v8Wpe3/Fabt/xWm7f8Vp/D/E5ve5wIUHSECFyEkFJ7h
+6hWn8P8Vpu3/Fabt/xak7P8hq+3/lNb2/+r1/P/2+/7/////////////////////////////////////
+///////////////////////2+v7/Sbnx/xaj7f8Vpu3/Fabt/xWm7f8Vp/D/E5ve5wIUHSECFyEkFJ7h
+6han8P8Wpu3/Fqbt/xam7f8XpO3/FJ/s/zOt7v+z3/n/////////////////////////////////////
+//////////////////r7/v9XwvL/FaPs/xam7f8Vpu3/Fabt/xWm7f8Vp/D/E5ve5wIUHSECFh8jFJ3h
+6Rem8P8Uouz/FaPs/xqj7P8hqu3/XMLy/7/n+v/7/v//////////////////////////////////////
+////////////6/X8/1G+8f8Vo+z/Fqbt/xWm7f8Vpu3/Fabt/xWm7f8Vp/D/E5ve5wIUHSECFB0hFpve
+51jA9f+C0fX/h9T2/7Th+f/j8fz/////////////////////////////////////////////////////
+///+//+14vn/NbLu/xaj7P8Wpu3/Fabt/xWm7f8Vpu3/Fabt/xWm7f8Vp/D/E5ve5wIUHSECFB0hE5re
+5yit8f92yvP/1+z7///////////////////////////////////////////////////////6+/7/v+b6
+/1XA8v8bpe3/FqTs/xWm7f8Vpu3/Fabt/xWm7f8Vpu3/Fabt/xWm7f8Vp/D/E5ve5wIUHiEBCA0QEY3L
+2Baq8/8Woez/IKbt/0S58f+I0PX/seH5/9bt+//l8vz/6fT8/+Hx/P/O6/v/pt/5/33M9f86tPD/G6Xs
+/xaj7P8Wpu3/Fabt/xWm7f8Vpu3/Fabt/xWm7f8Vpu3/Fabt/xWm7f8VqvL/E5TR3gEMERUAAAAAC1h+
+iBay/P8Vpez/Fqbt/xak7f8Xoez/F6Ts/yWn7f8sq+7/Lqvu/yuq7v8ipu3/FqPs/xij7P8WpO3/Fqbt
+/xWm7f8Vpu3/Fabt/xWm7f8Vpu3/Fabt/xWm7f8Vpu3/Fabt/xWl7P8Wsv3/DGGKkwABAQEAAAAAAQsP
+ExB8r7oWsvz/Favz/xWn8P8Vp/D/F6fw/xen8P8Xp/D/F6fw/xen8P8Xp/D/F6fw/xWn8P8Vp/D/Fafw
+/xWn8P8Vp/D/Fafw/xWn8P8Vp/D/Fafw/xWn8P8Vp/D/Favz/xaw/P8Qg7nFAQ8WGQAAAAAAAAAAAAAA
+AAEJDhILWH2IEY7K1xOb3ucTm97nE5ve5xOb3ucTm97nE5ve5xOb3ucTm97nE5ve5xOb3ucTm97nE5ve
+5xOb3ucTm97nE5ve5xOb3ucTm97nE5ve5xOb3ucTnd7nEZDN2QtagYsBDBIVAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAQgMEAIUHSECFB0hAhQdIQIUHSECFB0hAhQdIQIUHSECFB0hAhQdIQIUHSECFB0hAhQd
+IQIUHSECFB0hAhQdIQIUHSECFB0hAhQdIQIUHSECFh4hAQkOEQAAAAAAAAAAAAAAAAAAAAAADgEAAAMA
+AAABAB4AAAEBAAMAAAABAB4AAAECAAMAAAAEAAAOxgEDAAMAAAABAAEAAAEGAAMAAAABAAIAAAERAAQA
+AAABAAAACAESAAMAAAABAAEAAAEVAAMAAAABAAQAAAEWAAMAAAABAB4AAAEXAAQAAAABAAAOEAEcAAMA
+AAABAAEAAAFSAAMAAAABAAEAAAFTAAMAAAAEAAAOzodzAAcAAAfYAAAO1gAAAAAACAAIAAgACAABAAEA
+AQABAAAH2GFwcGwCIAAAbW50clJHQiBYWVogB9kAAgAZAAsAGgALYWNzcEFQUEwAAAAAYXBwbAAAAAAA
+AAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1hcHBsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAALZGVzYwAAAQgAAABvZHNjbQAAAXgAAAWcY3BydAAABxQAAAA4d3RwdAAAB0wA
+AAAUclhZWgAAB2AAAAAUZ1hZWgAAB3QAAAAUYlhZWgAAB4gAAAAUclRSQwAAB5wAAAAOY2hhZAAAB6wA
+AAAsYlRSQwAAB5wAAAAOZ1RSQwAAB5wAAAAOZGVzYwAAAAAAAAAUR2VuZXJpYyBSR0IgUHJvZmlsZQAA
+AAAAAAAAAAAAFEdlbmVyaWMgUkdCIFByb2ZpbGUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAG1sdWMAAAAAAAAAHwAAAAxza1NLAAAAKAAAAYRkYURLAAAALgAAAaxj
+YUVTAAAAJAAAAdp2aVZOAAAAJAAAAf5wdEJSAAAAJgAAAiJ1a1VBAAAAKgAAAkhmckZVAAAAKAAAAnJo
+dUhVAAAAKAAAApp6aFRXAAAAFgAAAsJuYk5PAAAAJgAAAthjc0NaAAAAIgAAAv5oZUlMAAAAHgAAAyBp
+dElUAAAAKAAAAz5yb1JPAAAAJAAAA2ZkZURFAAAALAAAA4prb0tSAAAAFgAAA7ZzdlNFAAAAJgAAAth6
+aENOAAAAFgAAA8xqYUpQAAAAGgAAA+JlbEdSAAAAIgAAA/xwdFBPAAAAJgAABB5ubE5MAAAAKAAABERl
+c0VTAAAAJgAABB50aFRIAAAAJAAABGx0clRSAAAAIgAABJBmaUZJAAAAKAAABLJockhSAAAAKAAABNpw
+bFBMAAAALAAABQJydVJVAAAAIgAABS5hckVHAAAAJgAABVBlblVTAAAAJgAABXYAVgFhAGUAbwBiAGUA
+YwBuAP0AIABSAEcAQgAgAHAAcgBvAGYAaQBsAEcAZQBuAGUAcgBlAGwAIABSAEcAQgAtAGIAZQBzAGsA
+cgBpAHYAZQBsAHMAZQBQAGUAcgBmAGkAbAAgAFIARwBCACAAZwBlAG4A6AByAGkAYwBDHqUAdQAgAGgA
+7ABuAGgAIABSAEcAQgAgAEMAaAB1AG4AZwBQAGUAcgBmAGkAbAAgAFIARwBCACAARwBlAG4A6QByAGkA
+YwBvBBcEMAQzBDAEOwRMBD0EOAQ5ACAEPwRABD4ERAQwBDkEOwAgAFIARwBCAFAAcgBvAGYAaQBsACAA
+ZwDpAG4A6QByAGkAcQB1AGUAIABSAFYAQgDBAGwAdABhAGwA4QBuAG8AcwAgAFIARwBCACAAcAByAG8A
+ZgBpAGyQGnUoACAAUgBHAEIAIIJyX2ljz4/wAEcAZQBuAGUAcgBpAHMAawAgAFIARwBCAC0AcAByAG8A
+ZgBpAGwATwBiAGUAYwBuAP0AIABSAEcAQgAgAHAAcgBvAGYAaQBsBeQF6AXVBeQF2QXcACAAUgBHAEIA
+IAXbBdwF3AXZAFAAcgBvAGYAaQBsAG8AIABSAEcAQgAgAGcAZQBuAGUAcgBpAGMAbwBQAHIAbwBmAGkA
+bAAgAFIARwBCACAAZwBlAG4AZQByAGkAYwBBAGwAbABnAGUAbQBlAGkAbgBlAHMAIABSAEcAQgAtAFAA
+cgBvAGYAaQBsx3y8GAAgAFIARwBCACDVBLhc0wzHfGZukBoAIABSAEcAQgAgY8+P8GWHTvZOAIIsACAA
+UgBHAEIAIDDXMO0w1TChMKQw6wOTA7UDvQO5A7oDzAAgA8ADwQO/A8YDrwO7ACAAUgBHAEIAUABlAHIA
+ZgBpAGwAIABSAEcAQgAgAGcAZQBuAOkAcgBpAGMAbwBBAGwAZwBlAG0AZQBlAG4AIABSAEcAQgAtAHAA
+cgBvAGYAaQBlAGwOQg4bDiMORA4fDiUOTAAgAFIARwBCACAOFw4xDkgOJw5EDhsARwBlAG4AZQBsACAA
+UgBHAEIAIABQAHIAbwBmAGkAbABpAFkAbABlAGkAbgBlAG4AIABSAEcAQgAtAHAAcgBvAGYAaQBpAGwA
+aQBHAGUAbgBlAHIAaQENAGsAaQAgAFIARwBCACAAcAByAG8AZgBpAGwAVQBuAGkAdwBlAHIAcwBhAGwA
+bgB5ACAAcAByAG8AZgBpAGwAIABSAEcAQgQeBDEESQQ4BDkAIAQ/BEAEPgREBDgEOwRMACAAUgBHAEIG
+RQZEBkEAIAYqBjkGMQZKBkEAIABSAEcAQgAgBicGRAY5BicGRQBHAGUAbgBlAHIAaQBjACAAUgBHAEIA
+IABQAHIAbwBmAGkAbABldGV4dAAAAABDb3B5cmlnaHQgMjAwNyBBcHBsZSBJbmMuLCBhbGwgcmlnaHRz
+IHJlc2VydmVkLgBYWVogAAAAAAAA81IAAQAAAAEWz1hZWiAAAAAAAAB0TQAAPe4AAAPQWFlaIAAAAAAA
+AFp1AACscwAAFzRYWVogAAAAAAAAKBoAABWfAAC4NmN1cnYAAAAAAAAAAQHNAABzZjMyAAAAAAABDEIA
+AAXe///zJgAAB5IAAP2R///7ov///aMAAAPcAADAbNIlJicoWiRjbGFzc25hbWVYJGNsYXNzZXNfEBBO
+U0JpdG1hcEltYWdlUmVwoycpKlpOU0ltYWdlUmVwWE5TT2JqZWN00iUmLC1XTlNBcnJheaIsKtIlJi8w
+Xk5TTXV0YWJsZUFycmF5oy8sKtMyMwo0NTZXTlNXaGl0ZVxOU0NvbG9yU3BhY2VEMCAwABADgAzSJSY4
+OVdOU0NvbG9yojgq0iUmOzxXTlNJbWFnZaI7Kl8QD05TS2V5ZWRBcmNoaXZlctE/QFRyb290gAEACAAR
+ABoAIwAtADIANwBGAEwAVwBeAGUAcgB5AIEAgwCFAIoAjACOAJcAnACnAKkAqwCtALIAtQC3ALkAuwC9
+AMIA2QDbAN0XjxeUF58XqBe7F78XyhfTF9gX4BfjF+gX9xf7GAIYChgXGBwYHhggGCUYLRgwGDUYPRhA
+GFIYVRhaAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAAGFw
+</mutableData>
+        </image>
         <image name="notification" width="256" height="256"/>
         <image name="twitter-addFriend-Image" width="30" height="30"/>
         <image name="twitter-heart-Image" width="40" height="35"/>
